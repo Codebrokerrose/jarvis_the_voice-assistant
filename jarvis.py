@@ -1,15 +1,15 @@
 #jarvis  Codebrokerrose/jarvis_the_voice_assistant
 import pyttsx3 #module to speech conversion library in python (pip install pyttsx3)
-import speech_recognition as sr #pip install speech recognization
+import speech_recognition as sr #pip install speech recognization(also pip install play audio)
 import datetime
 import wikipedia #pip install wikipedia
 import webbrowser
 import os
 import smtplib
-from googlesearch import *
+from googlesearch import * #pip install google
 import webbrowser
-import requests
-from bs4 import BeautifulSoup
+import requests #pip install requests
+from bs4 import BeautifulSoup #pip install googlesearch-python beautifulsoup4
 
 
 #iexplorer_path = r'C:\Program Files (x86)\Internet Explorer\iexplore.exe %s'
@@ -26,13 +26,13 @@ def speak(audio):#whatever argument this will take,this will speak it
 
 def wishMe():
     hour = int(datetime.datetime.now().hour)
-    if hour>=0 and hour<12:
+    if hour>=4 and hour<12:
         speak("GOOD MOORNING!")
     elif hour>=12 and hour<18:
         speak("GOOD AFTERNOON!")
-    else:
+    elif hour>=18 and hour<21:
         speak("GOOD EVENING!")
-    speak("Hi ma'am i am Jarvis. Please tell me how may I help you")
+    speak("Hi master i am Jarvis. Please tell me how may I help you")
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -149,7 +149,7 @@ if __name__ =="__main__": #__name__ is the buid in variable which evaluates to t
             os.startfile(path)
         elif 'the time' in query: #whats the time jurvis
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            speak(f"Ma'am the time is {strTime}") 
+            speak(f"Master the time is {strTime}") 
         elif 'open code' in query:
             codePath ="C:\\Users\\Windows 10\\Desktop\\Java\\SukanyaSaha\\Microsoft VS Code\\Code.exe"
             os.startfile(codePath)
