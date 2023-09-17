@@ -81,7 +81,7 @@ def sendEmail(to, content):#enable less secure apps
 # Perform the Google search and get the results
 def perform_google_search(query):
     try:
-        results = list(search(query, num=2, stop=2, pause=2.0))  # You can adjust the number of results and pause time
+        results = list(search(query, num=1, stop=1, pause=2.0))  # You can adjust the number of results and pause time
         return results
     except Exception as e:
         print(f"An error occurred: {str(e)}")
